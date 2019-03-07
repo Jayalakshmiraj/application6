@@ -1,0 +1,14 @@
+<h4>Employee List</h4>
+<li *ngFor="let emp of empArr;let i = index">
+  <p (click)="editButton(emp)">
+  <button (click)="addDelete(i)" name="delete">x</button>
+  {{emp.id}} || {{emp.name}}</p>
+</li>
+<input type="text"  [(ngModel)]="empObj.id" placeholder="id">
+<input type="text" [(ngModel)]="empObj.name" placeholder="name">
+<button (click)="addButton()" name="add">add</button>
+<button (click)="deleteLastButton()" name="delete">delete</button>
+<div *ngIf="selectedEmployee">
+  <input type="text"  [(ngModel)]="selectedEmployee.id" placeholder="id">
+  <input type="text" [(ngModel)]="selectedEmployee.name" placeholder="name">
+</div>
